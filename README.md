@@ -1,2 +1,4 @@
 # CTF-Write-Up
-CTF_PWN WRITE UP
+
+Pwnable Write Up
+Written By LeeYoungJoo(boright77@naver.com)
