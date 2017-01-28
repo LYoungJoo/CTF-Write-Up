@@ -1,3 +1,4 @@
+# http://nextline.tistory.com/103
 from pwn import *
 
 system_off = 0x9ac50
