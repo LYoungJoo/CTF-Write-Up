@@ -1,3 +1,4 @@
+# http://nextline.tistory.com/104
 from pwn import *
 
 e = ELF('./ezhp')
