@@ -1,3 +1,4 @@
+# http://nextline.tistory.com/105
 from pwn import *
 
 s = remote('35.154.158.26', 31338)
