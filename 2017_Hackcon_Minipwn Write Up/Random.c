@@ -1,3 +1,4 @@
+// http://nextline.tistory.com/105
 #include<stdio.h>
 #include<time.h>
 #include<stdlib.h>
