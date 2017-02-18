@@ -1,3 +1,4 @@
+# http://nextline.tistory.com/109
 from pwn import *
 
 s = process('./search')
