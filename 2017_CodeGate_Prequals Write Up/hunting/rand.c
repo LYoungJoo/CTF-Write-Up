@@ -1,5 +1,4 @@
 // http://nextline.tistory.com/110
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
