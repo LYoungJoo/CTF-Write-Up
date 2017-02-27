@@ -1,4 +1,4 @@
-#                                                                                                                                                                                                                           68,1         모두
+# http://nextline.tistory.com/113                                                                                                                                                                                                                 68,1         모두
 from pwn import *
 
 s = remote('139.59.61.220', 32345)
