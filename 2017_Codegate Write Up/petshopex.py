@@ -1,3 +1,4 @@
+# http://nextline.tistory.com/126
 from pwn import *
 
 s = process('./petshop') # libc : libc6_2.23-0ubuntu7_amd64.so
