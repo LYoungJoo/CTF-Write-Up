@@ -1,3 +1,4 @@
+# http://nextline.tistory.com/135
 from pwn import *
 
 main_scanf = 0x400fcc
