@@ -1,3 +1,4 @@
+# http://nextline.tistory.com/136
 from pwn import *
 
 s = process('./RNote2')
