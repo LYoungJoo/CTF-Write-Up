@@ -1,3 +1,4 @@
+# http://nextline.tistory.com/142
 from pwn import *
 
 s = process('./diary')
